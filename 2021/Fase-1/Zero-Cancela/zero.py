@@ -1,4 +1,4 @@
-qntNum = int(input("Quantos números você quer somar? "))
+qntNum = int(input())
 soma = []
 
 def mostraPilha(pilha):
@@ -7,14 +7,10 @@ def mostraPilha(pilha):
     print()
 
 for i in range(qntNum):
-    num = int(input("Digite um número: "))
+    num = int(input())
     if num != 0:
         soma.append(num)
-        mostraPilha(soma)
-        print(f"Soma Atual: {sum(soma)}\n")
     else:
         soma.pop()
-        mostraPilha(soma)
-        print(f"Soma Atual: {sum(soma)}\n")
 
-print(f"Soma final: {sum(soma)}")
+print(sum(soma))

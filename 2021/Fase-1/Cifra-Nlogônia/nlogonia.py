@@ -18,7 +18,7 @@ next_consonant = [
     ("X","Y"),("Y","Z"),("Z","Z")
     ]
 
-texto = input("Digite o texto a ser cifrado: ")
+texto = input()
 
 def nearest_consonant_finder(letter):
     for i in next_consonant:
@@ -41,4 +41,4 @@ def cipher(texto):
             texto_cifrado += letra + nearest_vowel_finder(letra) + nearest_consonant_finder(letra)
     return texto_cifrado.upper()
 
-print(cipher(texto).capitalize())
+print(cipher(texto).lower())
