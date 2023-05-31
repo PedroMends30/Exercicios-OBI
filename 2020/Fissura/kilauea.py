@@ -1,31 +1,19 @@
-try:
-    tam_mag = str(input())
-    tam_mag = tam_mag.split()
-    tam_matriz = int(tam_mag[0])
-    magnitude = int(tam_mag[1])
-except ValueError as ve:
-    print("Erro: {}".format(ve))
-    exit(1)
+inputString = input()
+N = int(inputString.split()[0]) # Tamanho da Matriz Quadrada
+F = int(inputString.split()[1]) # Força da Erupção
 
+# Matriz Quadrada
 matriz = []
+for i in range(N):
+    line = input()
+    matriz.append(list(line))
+    matriz[i] = [int(x) for x in matriz[i]]
 
-for i in range(tam_matriz):
-    linha = str(input())
-    matriz.append(list(linha))
-    matriz[i] = [int(i) for i in matriz[i]]
+pilha = []
 
-def avanco_lava (mag : int, map : list):
-    for line in map:
-        for element in line:
-            if int(element) < mag:
-                map[element] = "*" 
-    return map
+for i in range(N):
+    for j in range(N):
+        if matriz[i][j] == F:
+            pilha.append([i,j])
 
-print(avanco_lava(magnitude, matriz))
-
-"""
-for i in range(len(matriz)):
-    for j in range(len(matriz[i])):
-        print(matriz[i][j], end="")
-    print("\n")
-"""
+print(matriz)
